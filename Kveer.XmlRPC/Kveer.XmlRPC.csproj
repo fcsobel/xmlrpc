@@ -1,35 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>CookComputing.XmlRpc</RootNamespace>
-    <Authors>Sébastien Rault</Authors>
-    <Company>Kveer</Company>
-    <Description>A port of CookComputing.XmlRpcV2 for dotnet core.</Description>
-    <Copyright>Sébastien Rault</Copyright>
-    <PackageTags>xmlrpc</PackageTags>
-    <Version>1.3.1</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>- add support for &lt;long&gt; nodes
-- update targetframework to a supported version</PackageReleaseNotes>
-    <PackageLicense>MIT License</PackageLicense>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/LordVeovis/xmlrpc</PackageProjectUrl>
-    <RepositoryUrl>git@github.com:LordVeovis/xmlrpc.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <AssemblyOriginatorKeyFile>sn-prd.pub</AssemblyOriginatorKeyFile>
-    <SignAssembly>false</SignAssembly>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(CIRCLE_TAG)' != '' ">
-    <SignAssembly>true</SignAssembly>
-    <DelaySign>true</DelaySign>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>CookComputing.XmlRpc</RootNamespace>
+		<Description>A port of CookComputing.XmlRpcV2 for dotnet core.</Description>
+		<PackageId>Kveer.XmlRpc.Unsigned</PackageId>
+		<PackageTags>xmlrpc</PackageTags>
+		<Version>1.3.1</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageReleaseNotes>Unsigned version</PackageReleaseNotes>
+		<PackageLicense>MIT License</PackageLicense>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageProjectUrl>https://github.com/fcsobel/xmlrpc</PackageProjectUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
-    <None Include="..\README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
+	</ItemGroup>
 
 </Project>

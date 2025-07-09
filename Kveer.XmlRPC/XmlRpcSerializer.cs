@@ -211,8 +211,7 @@ namespace CookComputing.XmlRpc
 			#endif
 			try
 			{
-				using (var reader = new StreamReader(stm, Encoding.UTF8, true, 1024, leaveOpen: true))
-				using (var xmlRdr = XmlReader.Create(reader, stng))
+				using (var xmlRdr = XmlReader.Create(stm, stng))
 				{
 					xdoc.Load(xmlRdr);
 				}

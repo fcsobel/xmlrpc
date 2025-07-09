@@ -207,11 +207,13 @@ namespace CookComputing.XmlRpc
 			var xdoc = new XmlDocument { PreserveWhitespace = true };
 			try
 			{
-				using (var xmlRdr = new XmlTextReader(stm))
+				var settings = new XmlReaderSettings();
+				#if (!COMPACT_FRAMEWORK)
+				settings.DtdProcessing = DtdProcessing.Prohibit;
+				#endif
+				using (var reader = new StreamReader(stm, Encoding.UTF8, true, 1024, leaveOpen: true))
+				using (var xmlRdr = XmlReader.Create(reader, settings))
 				{
-#if (!COMPACT_FRAMEWORK)
-					xmlRdr.DtdProcessing = DtdProcessing.Prohibit;
-#endif
 					xdoc.Load(xmlRdr);
 				}
 			}
